@@ -22,5 +22,3 @@ from logger import Logger
 logger = Logger()
 logger.info("アプリ起動")
 ```
-
-詳細は [ドキュメント](docs/_build/html/index.html) を参照。

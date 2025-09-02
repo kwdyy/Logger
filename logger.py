@@ -158,7 +158,7 @@ class Logger:
                 "level": "INFO",
                 "formatter": "rich_simple",  # ★ ここを変更
                 "rich_tracebacks": True,
-                "show_time": True,
+                "show_time": False,
                 "show_level": True,
                 "show_path": True,
                 "markup": False,
