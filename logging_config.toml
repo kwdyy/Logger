@@ -1,0 +1,36 @@
+# logging_config.toml
+# ロギング設定ファイル（TOML形式）
+
+version = 1
+disable_existing_loggers = false
+
+[formatters.detailed]
+format = "%(asctime)s.%(msecs)03d %(levelname)7s %(message)s [%(name)s:%(lineno)d]"
+datefmt = "%Y-%m-%d %H:%M:%S"
+
+[formatters.rich_simple]
+format = "%(message)s"  # ★ 日時・レベルはRichHandlerが担当するので不要
+
+# カスタムフォーマッターを指定（ColoredFormatterクラス）
+[formatters.colored]
+"()" = "logger.ColoredFormatter"
+
+[handlers.file]
+class = "logging.handlers.RotatingFileHandler"
+level = "DEBUG"
+formatter = "detailed"
+filename = "PLACEHOLDER_FOR_CODE"  # プレースホルダー（実際にはコードで動的に設定）
+maxBytes = 16777216
+backupCount = 3
+encoding = "utf-8"
+
+[handlers.console]
+# richがなければ自動でStreamHandler + coloredに切り替わる（コード側で制御）
+# ここではプレースホルダー
+level = "INFO"
+formatter = "detailed"
+
+[loggers.""]
+level = "DEBUG"
+handlers = ["console", "file"]
+propagate = false
