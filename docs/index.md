@@ -21,7 +21,7 @@ rich ライブラリがあれば色付きログを、なければ ANSI エスケ
 ```
 
 ```{eval-rst}
-.. automodule:: logger
+.. automodule:: kwdyy_logger.logger
    :members:
    :undoc-members:
    :show-inheritance:

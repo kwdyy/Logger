@@ -117,7 +117,7 @@ class Logger:
                     "datefmt": "%Y/%m/%d %H:%M:%S"
                 },
                 "colored": {
-                    "()": "logger.ColoredFormatter"
+                    "()": "kwdyy_logger.logger.ColoredFormatter"
                 }
             },
             "handlers": {
@@ -190,3 +190,33 @@ class ColoredFormatter(Formatter):
         log_color = self.COLORS.get(record.levelname, self.RESET)
         message = super().format(record)
         return f"{log_color}{message}{self.RESET}"
+
+def main():
+    """
+    A simple demonstration of the Logger class.
+    Initializes the logger using 'logging_config.toml' if it exists in the current directory,
+    and logs messages at various levels.
+    """
+    print("Logger demo started.")
+    print("This will use 'logging_config.toml' if present in the current directory.")
+    
+    try:
+        # The Logger class will automatically look for 'logging_config.toml'
+        logger = Logger()
+        
+        logger.info("Logger initialized for demo.")
+        logger.debug("This is a debug message.")
+        logger.info("This is an info message.")
+        logger.warn("This is a warning message.")
+        logger.error("This is an error message.", exc_info=False)
+        logger.critical("This is a critical message.")
+        
+        print(f"Log messages have been written. Please check the configured log files (e.g., in the 'logs' directory).")
+
+    except Exception as e:
+        print(f"An unexpected error occurred during the logger demo: {e}")
+        import traceback
+        traceback.print_exc()
+
+if __name__ == "__main__":
+    main()

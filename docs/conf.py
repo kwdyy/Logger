@@ -21,10 +21,7 @@ extensions = [
     'myst_parser',             # ✅ Markdown対応
 ]
 
-source_suffix = {
-    '.rst': None,
-    '.md': None,
-}
+source_suffix = ['.rst', '.md']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -40,4 +37,4 @@ html_theme = 'sphinx_rtd_theme'
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('..'))  # logger.py がルートにあるため
+sys.path.insert(0, os.path.abspath('../src'))  # srcディレクトリをパスに追加

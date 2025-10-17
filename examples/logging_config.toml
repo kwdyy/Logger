@@ -13,7 +13,7 @@ format = "%(message)s"  # ★ 日時・レベルはRichHandlerが担当するの
 
 # カスタムフォーマッターを指定（ColoredFormatterクラス）
 [formatters.colored]
-"()" = "logger.ColoredFormatter"
+"()" = "kwdyy_logger.logger.ColoredFormatter"
 
 [handlers.file]
 class = "logging.handlers.RotatingFileHandler"

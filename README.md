@@ -7,17 +7,17 @@
 ## インストール
 
 ```bash
-pip install .
+uv sync
 ```
 
 ## 開発環境構築
 ```bash
-pip install -e .[dev]
+uv sync --extra dev
 ```
 
 ## 使用例
 ```Python
-from logger import Logger
+from kwdyy_logger.logger import Logger
 
 logger = Logger()
 logger.info("アプリ起動")

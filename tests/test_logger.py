@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 import logging
-from logger import Logger
+from kwdyy_logger.logger import Logger
 import shutil
 from datetime import datetime
 

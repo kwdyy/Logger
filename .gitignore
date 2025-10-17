@@ -25,3 +25,10 @@ docs/_build/
 docs/_sources/
 docs/_static/
 docs/_templates/
+
+# Distribution / packaging
+*.egg-info/
+
+# ログファイル
+logs/
+test_logs/

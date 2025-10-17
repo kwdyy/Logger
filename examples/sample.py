@@ -1,4 +1,4 @@
-from logger import Logger
+from kwdyy_logger.logger import Logger
 
 
 def divide_by_zero():
